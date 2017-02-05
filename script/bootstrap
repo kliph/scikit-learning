@@ -1,0 +1,23 @@
+#!/bin/bash
+echo "🌯  Updating homebrew to ensure dependencies are installed and upgraded"
+brew update
+
+if ! brew ls --versions python3 > /dev/null; then
+   brew install python3
+fi
+
+if brew outdated | grep -q python3; then
+    brew upgrade python3
+fi
+
+python3 -m venv ./venv
+
+if [ -z ${VIRTUAL_ENV+x} ]; then
+    echo "🌯  You're not in the virutal env.  Dropping you into a shell with the virtual env activated."
+    source ./venv/bin/activate/
+    ./venv/bin/pip install -r ./requirements.txt
+    /bin/bash -c ". ./venv/bin/activate; exec /bin/bash -i"
+else
+    echo "🌯  Installing requirements to the virtual env"
+    ./venv/bin/pip install -r ./requirements.txt
+fi
