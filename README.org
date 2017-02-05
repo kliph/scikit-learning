@@ -33,7 +33,7 @@ Run with =./script/bootstrap=
   matplotlib==2.0.0
   pandas==0.19.2
   scikit-learn==0.18.1
-
+  ipython==5.2.2
 #+END_SRC
 
 ** Python virtual environment
@@ -104,3 +104,9 @@ environment are up to date.
 * CI Build
 
 * Console
+
+Run =./script/console= to get a console to the project.
+
+#+BEGIN_SRC sh :tangle script/console :shebang "#!/bin/bash"
+  ./venv/bin/ipython
+#+END_SRC
