@@ -1,6 +1,8 @@
 * Following along with Machine Learning in Python tutorial
 http://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 
+See also: http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf
+
 * Tangling
 =C-c C-v t= tangles all code blocks in the file.  Pass a prefix
  argument to only tangle the current block.
