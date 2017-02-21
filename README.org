@@ -36,6 +36,12 @@ Run with =./script/bootstrap=
   ipython==5.2.2
 #+END_SRC
 
+** Makefile
+#+BEGIN_SRC makefile :tangle ./Makefile
+  iris.data:
+          curl -O https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+#+END_SRC
+
 ** Python virtual environment
 
 Install =python3= if it's not already installed.
@@ -74,9 +80,17 @@ virtual environment
       echo "🌯  Installing requirements to the virtual env"
       ./venv/bin/pip install -r ./requirements.txt
   fi
+
 #+END_SRC
 
+
 To activate the virtualenv in a shell =source venv/bin/activate=.
+
+Use make to retrieve data dependencies
+
+#+BEGIN_SRC sh :tangle script/bootstrap :shebang "#!/bin/bash"
+  make
+#+END_SRC
 
 * Setup
 

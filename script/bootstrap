@@ -21,3 +21,5 @@ else
     echo "🌯  Installing requirements to the virtual env"
     ./venv/bin/pip install -r ./requirements.txt
 fi
+
+make
